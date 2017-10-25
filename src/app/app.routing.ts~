@@ -1,0 +1,10 @@
+import {ModuleWithProviders} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
+
+import {UserComponent} from './components/user.component';
+import {AboutComponent} from './components/about.component';
+import {CareTakersComponent} from './components/careTakers.component';
+
+const appRoutes: Routes = [
+];
+export const routing: ModuleWithProviders=RouterModule.forRoot(appRoutes);  

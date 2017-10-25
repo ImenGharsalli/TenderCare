@@ -1,0 +1,46 @@
+.mat-panel-title{
+margin-left: 500px; 
+margin-top: 50px; 
+
+}
+
+.mat-toolbar{ 
+ width: 1000%;
+}
+
+.mat-form-field{
+  align-content: center;
+  margin-left: 130px;
+}
+.mat-raised-button{
+  align-content: center;
+  margin-left: 1100px;
+  margin-top: 15px;
+  width: 180px;
+}
+.post-button{
+  margin-left: 800px;
+ margin-top: 50px;
+}
+.test-login{
+  margin-right: 100px; 
+  margin-left: 100px;
+}
+.login-toolbar{
+  margin-right: 100px; 
+  margin-left: 100px;
+}
+.example-full-width{
+    width: 540px;
+}
+
+.right-bar{
+  margin-left: 880px;
+  height: 30px; 
+  margin-right: 30px;
+}
+.right-right-bar{
+  margin-left: 20px;
+  height: 30px;
+  margin-right:40px;
+}

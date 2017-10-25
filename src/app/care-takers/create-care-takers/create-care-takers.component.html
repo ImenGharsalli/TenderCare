@@ -1,0 +1,48 @@
+<mat-toolbar color="accent">
+  <div class="right-bar">
+    <span matTooltip="Home"><button mat-icon-button><mat-icon>home</mat-icon></button></span>&nbsp;
+    <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
+    <span matTooltip="Care takers"><button routerLink="/careTakers" mat-icon-button><mat-icon>loyalty</mat-icon></button></span>&nbsp;
+    <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
+
+  </div>
+  <mat-icon>keyboard_arrow_down</mat-icon>&nbsp;
+</mat-toolbar>
+
+
+<form [formGroup]="heroForm" novalidate color="accent">
+
+  <mat-toolbar>Create an outstanding care taker profile today</mat-toolbar>
+  <button mat-raised-button color="accent" routerLink="/jobs">Check out care jobs</button>
+  <button mat-raised-button color="accent" routerLink="/createJobs">Post a job</button>
+
+  <br>
+  <mat-form-field>
+    <input matInput placeholder="Job Function" formControlName="jobFunction">
+    <mat-icon matSuffix>mood</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Address" formControlName="address">
+    <mat-icon matSuffix>place</mat-icon>
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="City, State and ZIP" formControlName="cityStateZip">
+    <mat-icon matSuffix>location_city</mat-icon>
+  </mat-form-field>
+
+
+  <mat-form-field>
+    <div class="form-group">
+      <input matInput [matDatepicker]="picker" class="form-control" formControlName="expirationDate" placeholder="Expiration date">
+    </div>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="example-full-width">
+    <textarea matInput #message maxlength="256" placeholder="Description" formControlName="description"></textarea>
+    <mat-icon matSuffix>highlight</mat-icon>
+    <mat-hint align="start"><strong>Tell us about your values, experience and qualities</strong> </mat-hint>
+    <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+  </mat-form-field>
+  <br>
+  <button mat-raised-button class="post-button" color="accent">Save</button>

@@ -1,0 +1,14 @@
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';
+/* You can add global styles to this file, and also import other style files */
+body {
+  margin: 0;
+  padding: 0;
+}
+.mat-step-header .mat-step-icon {
+    background-color: #e91e63 !important;
+    color: white !important;
+}
+
+.mat-form-field{
+color: #e91e63 !important;
+}

@@ -1,0 +1,34 @@
+<mat-toolbar color="accent">
+  <div class="right-bar">
+    <span matTooltip="Home"><button mat-icon-button><mat-icon>home</mat-icon></button></span>&nbsp;
+    <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
+    <span matTooltip="Care takers"><button mat-icon-button routerLink="/careTakers"><mat-icon>loyalty</mat-icon></button></span>&nbsp;
+    <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
+  </div>
+  <button mat-icon-button><mat-icon>keyboard_arrow_down</mat-icon></button>&nbsp;
+</mat-toolbar>
+<mat-toolbar>Find the right care taker for your loved ones today</mat-toolbar>
+<form [formGroup]="heroForm" novalidate>
+  <div class="my-form">
+    <mat-form-field>
+      <div class="form-group">
+        <input matInput class="form-control" formControlName="function" placeholder="Search job by function">
+      </div>
+    </mat-form-field>
+    <mat-form-field>
+      <div class="form-group">
+        <input matInput class="form-control" formControlName="townStatePostalCode" placeholder="Town, state or postal code">
+      </div>
+    </mat-form-field>
+       <button  mat-raised-button color="accent">Search</button>
+  </div>
+</form>
+<br>
+<mat-toolbar>Popular care takers profiles</mat-toolbar>
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>
+
+<br><br>
+<mat-toolbar>Care takers that signed up this week</mat-toolbar>
+<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+</mat-paginator>

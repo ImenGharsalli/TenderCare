@@ -1,0 +1,84 @@
+<mat-toolbar color="accent">
+  <div class="right-bar">
+    <span matTooltip="Home"><button mat-icon-button><mat-icon>home</mat-icon></button></span>&nbsp;
+    <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
+    <span matTooltip="Care takers"><button routerLink="/careTakers" mat-icon-button><mat-icon>loyalty</mat-icon></button></span>&nbsp;
+    <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
+  </div>
+  <button mat-icon-button><mat-icon>keyboard_arrow_down</mat-icon></button>&nbsp;
+</mat-toolbar>
+<mat-toolbar>Hi Imen ! Let's get you started</mat-toolbar>
+<mat-horizontal-stepper [linear]="isLinear">
+  <mat-step [stepControl]="firstFormGroup">
+    <form [formGroup]="firstFormGroup">
+      <ng-template matStepLabel>Improve your profile</ng-template>
+      <mat-form-field color="accent">
+        <input matInput placeholder="Gender" formControlName="gender">
+        <mat-icon matSuffix>face</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="userAddress">
+        <mat-icon matSuffix>place</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="City, State and ZIP" formControlName="userCityStateZip">
+        <mat-icon matSuffix>location_city</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <span matPrefix>+1 &nbsp;</span>
+        <input type="tel" matInput placeholder="Telephone" formControlName="telephone">
+        <mat-icon matSuffix>mode_edit</mat-icon>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <ng-template matStepLabel>Post a new job</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Job Function" formControlName="jobFunction">
+        <mat-icon matSuffix>mood</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="jobAddress">
+        <mat-icon matSuffix>place</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="City, State and ZIP" formControlName="jobCityStateZip">
+        <mat-icon matSuffix>location_city</mat-icon>
+      </mat-form-field>
+      <mat-form-field>
+        <div class="form-group">
+          <input matInput [matDatepicker]="picker" class="form-control" formControlName="expirationDate" placeholder="Expiration date">
+        </div>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <textarea matInput #message maxlength="256" placeholder="Description"  formControlName="description" ></textarea>
+        <mat-icon matSuffix>highlight</mat-icon>
+        <mat-hint align="start"><strong>Describe the care job you would like to post</strong> </mat-hint>
+        <mat-hint align="end">{{message.value.length}} / 256</mat-hint>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button matStepperPrevious>Back</button>
+        <button mat-raised-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <br> <br> <br>
+    <div>
+      <button mat-raised-button matStepperPrevious>Back</button>
+      <button mat-raised-button class="save-button" color="accent">Save</button>
+      <button mat-raised-button class="cancel-button">Cancel</button>
+   
+
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>
