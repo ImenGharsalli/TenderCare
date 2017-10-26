@@ -10,7 +10,7 @@ import {CreateCareTakersComponent} from './care-takers/create-care-takers/create
 
 
 const appRoutes: Routes = [
-    {
+     {
         path: 'jobs',
         component: JobsComponent
     },

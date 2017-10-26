@@ -17,7 +17,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { CreateJobsComponent } from './jobs/create-jobs/create-jobs.component';
 import {CareTakersComponent} from './care-takers/care-takers.component';
 import {CreateCareTakersComponent} from './care-takers/create-care-takers/create-care-takers.component';
-
+import { JobsService } from './jobs.service';
+import { TablePaginationExampleComponent } from './table-pagination-example/table-pagination-example.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -25,7 +26,8 @@ import {CreateCareTakersComponent} from './care-takers/create-care-takers/create
     JobsComponent,
     CreateJobsComponent,
     CareTakersComponent,
-    CreateCareTakersComponent
+    CreateCareTakersComponent,
+    TablePaginationExampleComponent
   ],
   imports: [NgbModule.forRoot(),
   BrowserModule,
@@ -38,7 +40,7 @@ import {CreateCareTakersComponent} from './care-takers/create-care-takers/create
   AngularFontAwesomeModule,
   CloudinaryModule.forRoot(Cloudinary, { cloud_name: 'igcloud'})
   ],
-  providers: [],
+  providers: [JobsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
