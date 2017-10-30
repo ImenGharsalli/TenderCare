@@ -18,7 +18,6 @@ import { CreateJobsComponent } from './jobs/create-jobs/create-jobs.component';
 import {CareTakersComponent} from './care-takers/care-takers.component';
 import {CreateCareTakersComponent} from './care-takers/create-care-takers/create-care-takers.component';
 import { JobsService } from './jobs.service';
-import { TablePaginationExampleComponent } from './table-pagination-example/table-pagination-example.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +26,6 @@ import { TablePaginationExampleComponent } from './table-pagination-example/tabl
     CreateJobsComponent,
     CareTakersComponent,
     CreateCareTakersComponent,
-    TablePaginationExampleComponent
   ],
   imports: [NgbModule.forRoot(),
   BrowserModule,
