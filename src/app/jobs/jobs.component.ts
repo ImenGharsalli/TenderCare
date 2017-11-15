@@ -20,6 +20,11 @@ export class JobsComponent implements OnInit {
 
   ngOnInit() {
   }
+ onScroll () {
+        console.log('scrolled!!')
+    }
+
+
 createForm() {
     this.heroForm = this.fb.group({
       function: [''],

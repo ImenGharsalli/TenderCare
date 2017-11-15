@@ -16,6 +16,7 @@ import { JobsComponent } from './jobs/jobs.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CreateJobsComponent } from './jobs/create-jobs/create-jobs.component';
 import {CareTakersComponent} from './care-takers/care-takers.component';
+import { InfiniteScrollModule } from 'angular2-infinite-scroll';
 import {CreateCareTakersComponent} from './care-takers/create-care-takers/create-care-takers.component';
 import { JobsService } from './jobs.service';
 @NgModule({
@@ -36,6 +37,7 @@ import { JobsService } from './jobs.service';
   ReactiveFormsModule,
   SharedModule,
   AngularFontAwesomeModule,
+  InfiniteScrollModule,
   CloudinaryModule.forRoot(Cloudinary, { cloud_name: 'igcloud'})
   ],
   providers: [JobsService],

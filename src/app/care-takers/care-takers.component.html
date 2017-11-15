@@ -4,6 +4,7 @@
     <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
     <span matTooltip="Care takers"><button mat-icon-button routerLink="/careTakers"><mat-icon>loyalty</mat-icon></button></span>&nbsp;
     <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
+     <span class="nav-item"> <button mat-button>Become a care taker</button> </span>
   </div>
   <button mat-icon-button><mat-icon>keyboard_arrow_down</mat-icon></button>&nbsp;
 </mat-toolbar>
@@ -25,10 +26,3 @@
 </form>
 <br>
 <mat-toolbar>Popular care takers profiles</mat-toolbar>
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator>
-
-<br><br>
-<mat-toolbar>Care takers that signed up this week</mat-toolbar>
-<mat-paginator [length]="100" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
-</mat-paginator>

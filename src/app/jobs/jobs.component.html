@@ -4,6 +4,7 @@
     <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
     <span matTooltip="Care takers"><button routerLink="/careTakers" mat-icon-button><mat-icon>loyalty</mat-icon></button></span>&nbsp;
     <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
+   <span class="nav-item"> <button mat-button>Post a job</button> </span>
   </div>
   <button mat-icon-button><mat-icon>keyboard_arrow_down</mat-icon></button>&nbsp;
 </mat-toolbar>
@@ -26,7 +27,10 @@
 <br>
 <mat-toolbar>Care jobs that were posted this week</mat-toolbar>
 <div class="job-list">
-<div class="col1" *ngFor="let job of jobs">
+<div class="col1" *ngFor="let job of jobs" infinite-scroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="300"
+            (scrolled)="onScroll()" >
   
   <mat-card class="job-card">
     <mat-card-header>
@@ -37,9 +41,9 @@
     <cl-image mat-card-image class="job-image" public-id="{{job.imageId}}.jpg" height="200px">
     </cl-image>
      <mat-card-content>
-    <p><i class="fa fa-heart" style="color:#204060"></i> {{job.userFirstName}} {{job.userLastName}}</p>
-    <p><i class="fa fa-map-marker"></i> {{job.location}}</p>
-    <p><i class="fa fa-clock-o"></i> {{job.expirationDate}}</p>
+    <p> <mat-icon color="accent">favorite</mat-icon> {{job.userFirstName}} {{job.userLastName}}</p>
+    <p><mat-icon color="accent">location_on</mat-icon>  {{job.location}}</p>
+    <p><mat-icon color="accent">access_alarms</mat-icon> {{job.expirationDate}}</p>
    </mat-card-content>
    <mat-card-actions>
     <button mat-button>DETAILS</button>
