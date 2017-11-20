@@ -4,9 +4,12 @@ margin-top: 50px;
 
 }
 .mat-toolbar{ 
- width: 1000%;
+ width: 100%;
 }
-
+.col1{
+   display: inline-block;      
+   margin-top: 0px; 
+}
 .mat-form-field{
   align-content: center;
   margin-left: 20px;
@@ -31,18 +34,36 @@ margin-top: 50px;
 }
 
 .right-bar{
-  margin-left: 800px;
+  margin-left: 840px;
   height: 38px; 
-    margin-right:30px;
+  margin-right:30px;
 }
 .right-right-bar{
   margin-left: 10px;
   height: 38px;
   margin-right:30px;
 }
+
 .mat-raised-button{
   align-content: center;
   margin-left: 30px;
   margin-top: 20px;
   width: 180px;
+}
+.mat-card-header{
+  margin-bottom: 8px;
+}
+.job-card {
+  width: 264px;
+  height: 415px;
+  margin: 5px;
+}
+.job-list{
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.job-image {
+margin-left: 0px;
+margin-right: 0px;
+height: 100px!important;
 }

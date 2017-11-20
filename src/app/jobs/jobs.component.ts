@@ -9,8 +9,8 @@ import { JobsService } from '../jobs.service';
 })
 export class JobsComponent implements OnInit {
     p: number = 1;
-  jobs: Job[];
- heroForm: FormGroup;
+    jobs: Job[];
+    jobForm: FormGroup;
    constructor(private jobsService: JobsService, private fb: FormBuilder) { // <--- inject FormBuilder
     this.createForm();
    this.jobsService.getJobs().subscribe(jobs => {
@@ -26,7 +26,7 @@ export class JobsComponent implements OnInit {
 
 
 createForm() {
-    this.heroForm = this.fb.group({
+    this.jobForm = this.fb.group({
       function: [''],
       townStatePostalCode: ['' ],
     });

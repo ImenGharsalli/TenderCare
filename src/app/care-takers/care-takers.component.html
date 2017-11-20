@@ -4,12 +4,12 @@
     <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
     <span matTooltip="Care takers"><button mat-icon-button routerLink="/careTakers"><mat-icon>loyalty</mat-icon></button></span>&nbsp;
     <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
-     <span class="nav-item"> <button mat-button>Become a care taker</button> </span>
+     <span class="nav-item"> <button mat-button routerLink="/createCareTakers" >Become a care taker</button> </span>
   </div>
   <button mat-icon-button><mat-icon>keyboard_arrow_down</mat-icon></button>&nbsp;
 </mat-toolbar>
 <mat-toolbar>Find the right care taker for your loved ones today</mat-toolbar>
-<form [formGroup]="heroForm" novalidate>
+<form [formGroup]="careTakerForm" novalidate>
   <div class="my-form">
     <mat-form-field>
       <div class="form-group">
@@ -26,3 +26,28 @@
 </form>
 <br>
 <mat-toolbar>Popular care takers profiles</mat-toolbar>
+<div class="job-list">
+<div class="col1" *ngFor="let careTaker of careTakers" infinite-scroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="300"
+            (scrolled)="onScroll()" >
+  
+  <mat-card class="job-card">
+    <mat-card-header>
+      <div mat-card-avatar class="job-header-image"></div>
+      <mat-card-title>{{careTaker.jobFunction}}</mat-card-title>
+        <mat-card-subtitle>{{careTaker.description}}</mat-card-subtitle>
+    </mat-card-header>
+    <cl-image mat-card-image class="job-image" public-id="{{careTaker.imageId}}.jpg" height="200px">
+    </cl-image>
+     <mat-card-content>
+    <p> <mat-icon color="accent">favorite</mat-icon> {{careTaker.userFirstName}} {{careTaker.userLastName}}</p>
+    <p><mat-icon color="accent">location_on</mat-icon>  {{careTaker.location}}</p>
+   </mat-card-content>
+   <mat-card-actions>
+    <button mat-button>DETAILS</button>
+    <button mat-button>SAVE</button>
+  </mat-card-actions>                                                                                                                                                                                                             
+  </mat-card>
+  </div>
+</div>

@@ -4,12 +4,12 @@
     <span matTooltip="Care jobs"><button routerLink="/jobs" mat-icon-button><mat-icon>child_friendly</mat-icon></button></span>&nbsp;
     <span matTooltip="Care takers"><button routerLink="/careTakers" mat-icon-button><mat-icon>loyalty</mat-icon></button></span>&nbsp;
     <span matTooltip="Messaging"><button mat-icon-button><mat-icon>message</mat-icon></button></span>&nbsp;
-   <span class="nav-item"> <button mat-button>Post a job</button> </span>
+   <span class="nav-item"> <button mat-button routerLink="/createJobs"  >Post a job</button> </span>
   </div>
   <button mat-icon-button><mat-icon>keyboard_arrow_down</mat-icon></button>&nbsp;
 </mat-toolbar>
 <mat-toolbar>Find your dream care job today</mat-toolbar>
-<form [formGroup]="heroForm" novalidate>
+<form [formGroup]="jobForm" novalidate>
   <div class="my-form">
     <mat-form-field>
       <div class="form-group">
